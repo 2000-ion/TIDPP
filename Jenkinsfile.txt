@@ -31,12 +31,12 @@ pipeline
 			{
 				echo "Build number ${BUILD_NUMBER} with tag ${BUILD_TAG}"
 					
-				sh 'py -m venv "${BUILD_TAG}" && \
+				sh 'python -m venv "${BUILD_TAG}" && \
                             . ${BUILD_TAG}/Scripts/activate && \
-                              py -m pip install Pillow && \
+                              python -m pip install Pillow && \
                                  ${BUILD_TAG}/Scripts/pip install -r requirements.txt && \
-                        py manage.py makemigrations && py manage.py migrate && \
-                               py -m py_compile manage.py && \
+                        python manage.py makemigrations && python manage.py migrate && \
+                               python -m py_compile manage.py && \
                             deactivate'
 				
 			}
