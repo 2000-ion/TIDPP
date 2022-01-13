@@ -31,7 +31,8 @@ pipeline
 			{
 				echo "Build number ${BUILD_NUMBER} with tag ${BUILD_TAG}"
 					
-				sh 'python -m venv "${BUILD_TAG}" && \
+				sh 'python --version && \
+				python -m venv "${BUILD_TAG}" && \
                             . ${BUILD_TAG}/Scripts/activate && \
                               python -m pip install Pillow && \
                                  ${BUILD_TAG}/Scripts/pip install -r requirements.txt && \
